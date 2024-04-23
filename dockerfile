@@ -50,11 +50,9 @@ RUN a2enmod vhost_alias
 COPY apache-config/ /etc/apache2/sites-available/
 
 
-RUN a2ensite nsk.time.test.conf
-RUN a2ensite l-a.time.test.conf
+RUN a2ensite timetest.conf
 
-
-COPY src/ /var/www/
+COPY src/ /var/www/time
 
 
 RUN mkdir -p /var/www/nsk /var/www/la
