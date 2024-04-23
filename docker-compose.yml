@@ -1,0 +1,11 @@
+version: '3.8'  
+
+services:
+  nginx:
+    image: nginx:1.25.5  
+    ports:
+      - "80:80"  
+    volumes:
+      - ./nginx-config:/etc/nginx/conf.d  
+      - ./src:/usr/share/nginx/html  
+    restart: always  
