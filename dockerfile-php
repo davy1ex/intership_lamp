@@ -1,0 +1,7 @@
+# Используем официальный образ PHP с предустановленным FPM
+FROM php:7.4-fpm
+
+# Устанавливаем PDO и драйвер PostgreSQL для PDO
+RUN apt-get update && apt-get install -y \
+    libpq-dev \
+    && docker-php-ext-install pdo pdo_pgsql
