@@ -13,8 +13,11 @@
 ```
 
 
-### for build and run:
+### for run:
 ```bash
-docker build -t mylampapp .
-docker run -d -p 80:80 mylampapp
+docker-compose up -d
+```
+### for stup:
+```bash
+docker-compose down 
 ```
