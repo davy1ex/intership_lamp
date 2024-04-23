@@ -1,5 +1,6 @@
 # For build this docker:
 ### recomended structure:
+```
 ├── apache-config
 │   ├── l-a.time.test.conf
 │   └── nsk.time.test.conf
@@ -9,7 +10,7 @@
     │   └── index.php
     └── nsk
         └── index.php
-
+```
 
 
 ### for build and run:
