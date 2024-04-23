@@ -9,3 +9,9 @@ services:
       - ./nginx-config:/etc/nginx/conf.d  
       - ./src:/usr/share/nginx/html  
     restart: always  
+
+  php:
+    image: php:7.4-fpm
+    volumes:
+      - ./src:/usr/share/nginx/html
+    restart: always
