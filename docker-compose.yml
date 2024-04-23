@@ -17,6 +17,10 @@ services:
       dockerfile: dockerfile-php  
     volumes:
       - ./src:/usr/share/nginx/html
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    environment:
+      PHP_IDE_CONFIG: serverName=Docker
     restart: always
 
   db:
