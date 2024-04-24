@@ -8,13 +8,15 @@ services:
     volumes:
       - ./docker/nginx/config-nginx:/etc/nginx/conf.d
       - ./src:/usr/share/nginx/html
+    depends_on:
+      - php
     restart: always
   
   php:
     image: php:8.2-fpm
-    # build:
-    #   context: .
-      # dockerfile: ./docker/php/dockerfile
+    build:
+      context: .
+      dockerfile: ./docker/php/dockerfile
     volumes:
       - ./src:/usr/share/nginx/html
     restart: always
