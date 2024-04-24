@@ -1,13 +1,21 @@
 # For build this docker:
 ### recomended structure:
 ```
-├── apache-config
-│   ├── l-a.time.test.conf
-│   └── nsk.time.test.conf
-├── dockerfile
+├── README.md
+├── docker
+│   └── php
+│       ├── conf.d
+│       │   └── xdebug.ini
+│       └── dockerfile
+├── docker-compose.yml
+├── nginx-config
+│   └── default.conf
 └── src
+    ├── index.html
+    ├── index.php
     ├── la
     │   └── index.php
+    ├── log_time.php
     └── nsk
         └── index.php
 ```
@@ -15,7 +23,7 @@
 
 ### for run:
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 ### for stup:
 ```bash
