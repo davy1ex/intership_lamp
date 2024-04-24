@@ -1,4 +1,4 @@
-version: '3.8'  
+version: '3.9'  
 
 services:
   nginx:
@@ -11,16 +11,12 @@ services:
     restart: always  
 
   php:
-    image: php:7.4-fpm
+    image: php:8.2-fpm
     build: 
       context: . 
-      dockerfile: dockerfile-php  
+      dockerfile: docker/php/dockerfile
     volumes:
       - ./src:/usr/share/nginx/html
-    extra_hosts:
-      - "host.docker.internal:host-gateway"
-    environment:
-      PHP_IDE_CONFIG: serverName=Docker
     restart: always
 
   db:
