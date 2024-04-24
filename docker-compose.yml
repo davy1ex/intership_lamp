@@ -1,0 +1,20 @@
+version: '1'
+
+services:
+  nginx:
+    image: nginx:1.25.5
+    ports:
+      - 80:80
+    volumes:
+      - ./docker/nginx/config-nginx:/etc/nginx/conf.d
+      - ./src:/usr/share/nginx/html
+    restart: always
+  
+  php:
+    image: php:8.2-fpm
+    # build:
+    #   context: .
+      # dockerfile: ./docker/php/dockerfile
+    volumes:
+      - ./src:/usr/share/nginx/html
+    restart: always
